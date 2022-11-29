@@ -1,1 +1,1 @@
-Command failed: spleeter separate -o "D:\MyFiles\Music_Making\Abelton Packs\AbleSpleeter" -p spleeter:4stems-16kHz "C:/Users/Sony/SpotiFlyer/Aiobahn___Janee_-_Time_Goes_By__ft__Faith_.mp3"
+Command failed: spleeter separate -o "D:\MyFiles\Coding\Ableton_Devices\AbleSpleeter" -p spleeter:2stems-16kHz "C:/Users/Sony/Documents/Ableton/Live Recordings/2022-11-29 220548 Temp Project/Samples/Processed/Crop/test [2022-11-29 225758].wav"

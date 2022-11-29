@@ -12,6 +12,14 @@ process.env.PATH = [process.env.PATH, '/usr/local/bin'].join(':')
 Max.outlet('bang')
 
 // Use the 'addHandler' function to register a function for a particular
+
+Max.addHandlers({
+  
+  nstem: (ns) => {
+    numberStem(ns)
+  }
+})
+
 // message
 Max.addHandlers({
   
@@ -24,6 +32,11 @@ Max.addHandlers({
     runSpleeter(filename)
   }
 })
+
+const numberStem = (ns) => {
+  nstm = ns;
+  Max.post('From able_spleeter: '+ns)
+}
 
 const showDir = (dir) => {
   // Since LOM has no way to load these files automatically into new tracks,
@@ -40,7 +53,8 @@ const showDir = (dir) => {
   Max.outlet('set', `Select a clip; then press the button to start.`)
 }
 
-const runSpleeter = (filename) => {
+const runSpleeter = (filename, ns) => {
+  Max.post("ns:"+ns)
   const cmd = `spleeter separate -o "${__dirname}" -p spleeter:4stems-16kHz "${filename}"`
   Max.outlet('set', `AbleSpleeter is running.\nThis may take a minute...`)
   Max.post(cmd)
