@@ -1,7 +1,7 @@
 # Spleeter for Max
 
 
-<div><img src="./images/screenshot.png"> <p>Originally done by [diracdeltas](https://github.com/diracdeltas/spleeter4max), year ago, this is the updated and the better version with more features.</p></div>
+<div><img src="./images/screenshot.png"> <span>Originally done by [diracdeltas](https://github.com/diracdeltas/spleeter4max), year ago, this is the updated and the better version with more features.</span></div>
 
 Ableton max device for separating a clip into stems (vocals, bass, drums,
 other) **using an existing installation of spleeter**. if you aren't able to
