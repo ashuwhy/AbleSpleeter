@@ -12,31 +12,18 @@ process.env.PATH = [process.env.PATH, '/usr/local/bin'].join(':')
 Max.outlet('bang')
 
 // Use the 'addHandler' function to register a function for a particular
-
-Max.addHandlers({
-  
-  nstem: (ns) => {
-    numberStem(ns)
-  }
-})
-
 // message
+
 Max.addHandlers({
-  
-  onFile: (filename) => {
+  onFile: (filename, ns) => {
     if (!filename) {
       Max.post('No audio file found.')
       done()
       return
     }
-    runSpleeter(filename)
+    runSpleeter(filename, ns)
   }
 })
-
-const numberStem = (ns) => {
-  nstm = ns;
-  Max.post('From able_spleeter: '+ns)
-}
 
 const showDir = (dir) => {
   // Since LOM has no way to load these files automatically into new tracks,
@@ -50,26 +37,30 @@ const showDir = (dir) => {
     Max.post(`Unsupported platform: ${process.platform}`)
   }
   execSync(`${opener} "${dir}"`)
-  Max.outlet('set', `Select a clip; then press the button to start.`)
+  Max.outlet('set', `Select a clip.\nThen press the button to start.`)
 }
 
 const runSpleeter = (filename, ns) => {
-  Max.post("ns:"+ns)
-  const cmd = `spleeter separate -o "${__dirname}" -p spleeter:4stems-16kHz "${filename}"`
+  const cmd = `spleeter separate -o "${__dirname}" -p spleeter:${ns}stems-16kHz "${filename}"`
   Max.outlet('set', `AbleSpleeter is running.\nThis may take a minute...`)
   Max.post(cmd)
+  fs.writeFile('cmd.txt', cmd+"\n", (err) => {
+
+    // In case of a error throw err.
+    if (err) throw err;
+  })
 
   // Calls the spleeter python process
   exec(cmd, (err, stdout, stderr) => {
     if (err) {
-      
+
       // Data which will write in a file.
       let data = `${err.message}`
       fs.writeFile('log.txt', data, (err) => {
-          
+
         // In case of a error throw err.
         if (err) throw err;
-    })
+      })
       Max.outlet('set', `Error: Check logs in ${__dirname}`)
       Max.post(`Error: ${err.message}`)
       Max.post(`Spleeter stderr: ${stderr}`)
