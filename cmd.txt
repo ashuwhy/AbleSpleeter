@@ -1,1 +1,1 @@
-spleeter separate -o "D:\MyFiles\Coding\Ableton_Devices\AbleSpleeter" -p spleeter:5stems-16kHz "C:/Users/Sony/Documents/Ableton/Live Recordings/2022-11-30 071446 Temp Project/Samples/Processed/Crop/Ritviz & Nucleya - Roz [Official Audio] [2022-11-30 075225].wav"
+spleeter separate -o "D:\MyFiles\Coding\Ableton_Devices\AbleSpleeter" -p spleeter:4stems-16kHz "C:/Users/Sony/Documents/Ableton/Live Recordings/2022-11-30 071446 Temp Project/Samples/Processed/Crop/test [2022-11-30 080618].wav"
