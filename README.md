@@ -1,4 +1,4 @@
-# Spleeter for Max
+# AbleSpleeter
 
 - Originally done by [diracdeltas](https://github.com/diracdeltas/spleeter4max), years ago, this is the updated and the better version with more features.
 <div style="margin: auto, width: 50%;"><img src="./images/screenshot.png"></div>
