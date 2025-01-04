@@ -1,1 +1,1 @@
-Command failed: spleeter separate -o "D:\MyFiles\Coding\Ableton_Devices\AbleSpleeter" -p spleeter:5stems-16kHz "C:/Users/Sony/SpotiFlyer/Mountain_Brook.mp3"
+Command failed: spleeter separate -o "location" -p spleeter:5stems-16kHz "*.mp3"
